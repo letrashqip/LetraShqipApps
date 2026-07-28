@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Letra Shqip</title>
 
+    <!-- Browser tab favicon (no dedicated favicon.ico exists, so the 192px PWA
+         icon doubles as one — browsers scale it down fine for a tab icon).
+         Relative (not '/icons/...'), same reasoning as vite.config.js's
+         `base: './'` — an absolute path 404s under a GitHub Pages project
+         subpath deploy. -->
+    <link rel="icon" type="image/png" href="./icons/icon-192.png" />
+
     <!-- iOS "Add to Home Screen": iOS reads these directly rather than relying
          solely on the web app manifest (vite-plugin-pwa injects the manifest
          link + registers the service worker automatically). -->
