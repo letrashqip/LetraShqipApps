@@ -13,8 +13,18 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Letra Shqip" />
     <meta name="theme-color" content="#1a1a1c" />
-    <script type="module" crossorigin src="./assets/index-DIAYXF0w.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DyQi1c4S.css">
+
+    <!-- The account panel (AccountPanel.jsx/letrashqipAccount.js) always talks
+         to letrashqip.com regardless of build config, so it's safe to hint
+         unconditionally here; the voice-model host varies per deployment
+         (VITE_TTS_MODEL_BASE_URL) so it's added conditionally from main.jsx
+         instead, once the actual configured value is known. Saves a DNS+TLS
+         round trip on the first real request to each, which matters more on
+         a cellular iPad connection than on desktop broadband. -->
+    <link rel="preconnect" href="https://www.letrashqip.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.letrashqip.com" />
+    <script type="module" crossorigin src="./assets/index-DfnQA3h7.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-uah7gNDA.css">
   <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
   <body>
     <div id="root"></div>
